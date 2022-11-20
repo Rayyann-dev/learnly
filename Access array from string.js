@@ -1,27 +1,19 @@
 function printCell(arr, coords) {
-    coords = coords.substring(1, coords.length);
-    console.log(coords);
-    let str = coords.split("");
-    console.log(str);
-    var result = [];
-    str.forEach(function (x) {
-      if (parseInt(x) >= 0) result.push(parseInt(x));
-    });
-    console.log(result);
-    let final = [];
-    if (result.length <= 2) {
-      final = arr[result[0]][result[1]];
-    } else {
-      let abc = result.toString();
-      console.log(abc);
-      final = arr[result[0]][result[1]];
-    }
+   
+    let indexOfC = coords.indexOf('C') ;
+    let rowStr = coords.substring(1,indexOfC)
   
-    console.log(result);
-    console.log(final);
+    let colStr = coords.substring(indexOfC+1,coords.length)
+   
+    return arr[rowStr][colStr]
+
+   
+
+
+
   }
   
-  printCell(
+  console.log(printCell(
     [
       [5, 4, 9, 5, 0, 4, 4, 1, 2, 1, 4, 7],
       [5, 5, 0, 2, 9, 8, 8, 9, 2, 3, 7, 5],
@@ -37,5 +29,5 @@ function printCell(arr, coords) {
       [9, 3, 5, 8, 7, 3, 6, 2, 2, 5, 5, 1],
     ],
     "R0C11"
-  );
+  ));
   
